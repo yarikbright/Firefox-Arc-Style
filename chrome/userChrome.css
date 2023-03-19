@@ -1,0 +1,93 @@
+
+@import url(theming/color-alt.css);
+@import url(sidebar.css);
+
+/* MY CUSTOMS */
+
+/* #TabsToolbar {display: none;} */
+
+#titlebar {margin-top: -30px !important;}
+
+
+/* :root {
+  --sidebar-hover-width: 170px;
+  --sidebar-visible-width: 300px;
+}
+#sidebar-box {
+  min-width: 300px !important;
+  max-width: 60px !important;
+}
+#sidebar-box {
+  position: absolute!important;
+  right: 0px;
+  margin-right: -260px;
+  z-index:5;
+  height: 100%;
+  transition: all 500ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+#sidebar-box:hover {
+  margin-right: -130px !important;
+  z-index:5;
+  transition: all 500ms cubic-bezier(0.075, 0.820, 0.165, 1.000);
+}
+ */
+
+@-moz-document url("chrome://global/content/alerts/alert.xhtml") {
+  
+  /* Color scheme definitions
+   * Intentionally let Firefox override these on Windows10
+   */
+
+    :root {
+      --menu-border-color: #5b5b66;
+      --menu-color: #fbfbfe;
+      --menu-background-color: #2b2a33;
+      --menuitem-hover-background-color: #52525e;
+    }
+    #alertSourceLabel { color: rgb(5,209,241) !important; }
+ 
+  
+  /* The line below removes background "layer" from the notification on linux, Windows and macOS don't have that layer in the first place */
+  :root{ background: transparent !important; }
+  
+  /* Make Firefox actually use the colors set above */
+  #alertBox {
+    color: var(--menu-color) !important;
+    padding: 6px !important;
+    font-size: 14px!important;
+    line-height: 18px !important;
+    background-color: var(--menu-background-color) !important;
+    border-color: var(--menu-border-color) !important;
+    border-radius: 6px !important;
+    -moz-window-shadow: cliprounded !important;
+  }
+  #alertSettings {
+    fill: currentColor !important;
+    color: inherit !important;
+    border-radius: 0 !important;
+    margin-inline: 0 !important;
+    margin-bottom: -4px !important;
+  }
+  .close-icon,
+  #alertSettings {
+    background: transparent !important
+  }
+  .close-icon:hover > .toolbarbutton-icon,
+  #alertSettings:is(:hover,[open]) > .button-box > .box-inherit {
+    background-color: var(--menuitem-hover-background-color);
+  }
+  
+  /* Reshape and move the buttons a bit */
+  .close-icon > .toolbarbutton-icon,
+  #alertSettings > .button-box > .box-inherit {
+    border-radius: 4px !important;
+    padding: 2px !important;
+    margin: 2px 2px -2px 0 !important;
+  }
+  #alertSettings > .button-box > .box-inherit {
+    margin: -4px 4px 3px 0 !important;
+  }
+  #alertSettings > .button-box > .box-inherit > .button-icon {
+    padding: 1px;
+  }
+}

@@ -1,0 +1,273 @@
+
+:root[titlepreface*="[S] "] {
+  --theme-spacing: 8px;
+  --theme-icon-size: 16px;
+  --theme-icon-pad: 7px;
+  --theme-border-radius: 5px;
+}
+:root[titlepreface*="[S] "] { 
+  --theme-sidebar-width: 250px !important;
+  --theme-button-size: calc(var(--theme-icon-size) + var(--theme-icon-pad) * 2);
+  --theme-urlbar-height: 40px !important;
+  --toolbarbutton-inner-padding: 2.5px !important;
+  --toolbarbutton-border-radius: var(--theme-border-radius) !important;
+  --urlbar-toolbar-height: 50px !important;
+}
+#main-window[titlepreface*="[S] "] #titlebar {
+  display: unset !important;
+}
+
+#main-window[titlepreface*="[S] "] #nav-bar {
+  --blah: calc(var(--theme-spacing) + var(--theme-button-size));
+  position: relative !important;
+  top: 12px !important; 
+  overflow: visible !important;
+  background: none !important;
+  box-shadow: none !important;
+  margin-left: 5px !important;
+  -moz-window-dragging: drag;
+  z-index: 5000 !important; 
+}
+#main-window[titlepreface*="[S] "] #nav-bar::before {
+  -moz-window-dragging: drag;
+  z-index: -1;
+  position: absolute;
+  content: '';
+  width: 100%;
+  top: 0 !important;
+  left: 0 !important;
+  margin-left: -6px !important;
+  height: 60px !important;
+}
+#main-window[titlepreface*="[S] "] #nav-bar toolbarbutton,
+#main-window[titlepreface*="[S] "] #nav-bar toolbaritem {
+  padding: 0 !important;
+  padding-inline: 2px !important;
+}
+#main-window[titlepreface*="[S] "] #urlbar-container,
+#main-window[titlepreface*="[S] "] #nav-bar {
+  position: absolute !important;
+  display: flex;
+  right: 6px
+}
+#main-window[titlepreface*="[S] "] #reload-button > .toolbarbutton-icon,
+#main-window[titlepreface*="[S] "] #stop-button > .toolbarbutton-icon {
+  padding: var(--toolbarbutton-inner-padding) !important;
+}
+
+/* #main-window[titlepreface*="[S] "] #urlbar {
+  --urlbar-container-padding: 0 var(--theme-spacing);
+  --urlbar-margin-inline: 0px;
+  --urlbar-height: var(--theme-urlbar-height) !important;
+  left: 31px !important;
+  top: 0 !important;
+  width: 150px !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 1.8px 1.5px 1px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px !important;
+  font-size: 12px !important;
+  transition: 0.1s all;
+}
+
+#main-window[titlepreface*="[S] "] #urlbar[breakout][breakout-extend] {
+  width: 200% !important;
+  border: 0px solid yellow !important;
+  box-shadow: none !important;
+  margin-left: 35vw !important;
+  margin-top: 20vh !important;
+  transition: 0.2s all;
+} */
+
+#main-window[titlepreface*="[S] "] #urlbar {
+  --urlbar-container-padding: 0 var(--theme-spacing);
+  --urlbar-margin-inline: 0px;
+  --urlbar-height: var(--theme-urlbar-height) !important;
+  left: 165px !important;
+  top: 0 !important;
+  width: 151px !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 1.8px 1.5px 1px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px !important;
+  font-size: 12px !important;
+  transition: 0.1s all;
+}
+
+#main-window[titlepreface*="[S] "] #urlbar[breakout][breakout-extend] {
+  width: 200% !important;
+  border: 0px solid yellow !important;
+  box-shadow: none !important;
+  margin-left: -60vw !important;
+  margin-top: 20vh !important;
+  transition: 0.2s all;
+}
+
+#main-window[titlepreface*="[S] "] #urlbar #userContext-label {
+  display: none!important;
+}
+
+#main-window[titlepreface*="[S] "] #urlbar[breakout][breakout-extend] > #urlbar-input-container {
+  height: 50px !important;
+  font-size: 16px !important;
+  padding: 0px 25px !important;
+  background-color: var(--toolbar-field-background-color) !important; 
+  border-radius: 5px !important;
+  margin: 12px !important; 
+  width: 96% !important;
+}
+
+#main-window[titlepreface*="[S] "] #urlbar:is([focused="true"], [open]) > #urlbar-background, #searchbar:focus-within {
+  background-color: var(--toolbar-bgcolor) !important;
+}
+#main-window[titlepreface*="[S] "] #urlbar[open] > #urlbar-background {
+  border: 0px solid yellow !important;
+  background-color: var(--toolbar-bgcolor) !important;
+}
+
+#main-window[titlepreface*="[S] "] .urlbarView {
+  border-inline: 0px solid transparent;
+  background: var(--toolbar-bgcolor) !important;
+}
+
+
+#main-window[titlepreface*="[S] "] .urlbarView-results {
+  font-size: 13px !important;
+  padding: 0 25px !important;
+}
+
+#main-window[titlepreface*="[S] "] #urlbar-container {
+  top: var(--blah);
+  margin-left: 25px !important;
+}
+#main-window[titlepreface*="[S] "] #urlbar-input-container {
+  padding: var(--urlbar-container-padding) !important;
+}
+@supports -moz-bool-pref("userChrome.sidebar.move_autocompletion") {
+  #main-window[titlepreface*="[S] "] #urlbar,
+  #main-window[titlepreface*="[S] "] #urlbar-input-container {
+    height: var(--urlbar-height) !important;
+  }
+}
+#main-window[titlepreface*="[S] "] .chromeUI #identity-icon-box {
+  padding-inline: var(--urlbar-icon-padding) !important;
+}
+#main-window[titlepreface*="[S] "] .chromeUI #identity-icon-box:not(:hover) {
+  background-color: transparent !important;
+}
+#main-window[titlepreface*="[S] "] #identity-icon-label {
+  display: none !important;
+}
+#main-window[titlepreface*="[S] "] .urlbarView {
+  padding-inline: 5px;
+}
+@supports -moz-bool-pref("userChrome.sidebar.move_autocompletion") {
+  #main-window[titlepreface*="[S] "] .urlbarView {
+    position: fixed !important;
+    left: calc(var(--theme-sidebar-width) + var(--theme-spacing));
+    top: var(--theme-spacing);
+    width: calc(100% - var(--theme-sidebar-width) - var(--theme-spacing) * 2) !important;
+    background-color: var(--toolbar-field-background-color);
+    background-clip: border-box;
+    border: 1px solid var(--toolbar-field-border-color);
+    border-radius: var(--toolbarbutton-border-radius);
+  }
+  #main-window[titlepreface*="[S] "] .urlbarView-body-inner {
+    border-top: none !important;
+  }
+}
+#main-window[titlepreface*="[S] "] #sidebar {
+  margin-top: 110px !important;
+  /* width: var( --theme-sidebar-width) !important;
+  min-width: var( --theme-sidebar-width) !important;
+  max-width: var( --theme-sidebar-width) !important; */
+  display: block;
+  background-color: var(--toolbar-bgcolor);
+}
+#main-window[titlepreface*="[S] "] #sidebar-header {
+  position: absolute;
+  top: 55px !important;
+  left: var(--theme-spacing);
+  display: none;
+  padding: 0 !important;
+  border-bottom: none !important;
+}
+
+#main-window[titlepreface*="[S] "] #sidebar-switcher-target {
+  padding: var(--theme-icon-pad) !important;
+}
+
+#main-window[titlepreface*="[S] "] #sidebar-button, #sidebar-header {display: none !important;}
+
+#main-window[titlepreface*="[S] "] .sidebar-splitter {
+  border-color: var(--chrome-content-separator-color) !important;
+}
+
+#main-window[titlepreface*="[S] "] #urlbar-container {
+  margin-left: -30px !important;
+}
+
+#main-window[titlepreface*="[S] "] #tracking-protection-icon-container, #main-window[titlepreface*="[S] "] #urlbar-zoom-button, #main-window[titlepreface*="[S] "] #identity-icon-box, #main-window[titlepreface*="[S] "] #star-button, #main-window[titlepreface*="[S] "] .urlbar-page-action,#main-window[titlepreface*="[S] "] #main-window[titlepreface*="[S] "] #urlbar-go-button, #main-window[titlepreface*="[S] "] .search-go-button,#main-window[titlepreface*="[S] "] #identity-box, #main-window[titlepreface*="[S] "] #tracking-protection-icon-container  {
+  display: none !important;
+}
+
+#main-window[titlepreface*="[S] "] #urlbarView {
+  min-width: 950px !important;
+}
+
+#main-window[titlepreface*="[S] "] #sidebar-box {
+  border-inline: 1px solid var(--chrome-content-separator-color);
+  border-inline-width: 0px 1px;
+  background-color: var(--toolbar-bgcolor) !important;
+}
+  
+
+
+#main-window[titlepreface*="[S] "] .titlebar-spacer {display: none !important;}
+
+#main-window[titlepreface*="[S] "] .titlebar-buttonbox-container, #main-window[titlepreface*="[S] "] #TabsToolbar > .titlebar-buttonbox-container {
+  -moz-window-dragging: drag;
+}
+
+#main-window[titlepreface*="[S] "] .toolbar-items {
+  display: none !important;
+}
+
+@media (-moz-platform: windows) {
+  #main-window[titlepreface*="[S] "] #titlebar {
+    position: absolute !important;
+    top: 0 !important;
+    left: 112px !important;
+    width: 300px !important;
+    -moz-window-dragging: drag;
+  }
+}
+
+
+@media (-moz-platform: macos) {
+  #main-window[titlepreface*="[S] "] #titlebar {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 300px !important;
+    margin-top: 8px !important;
+  }   
+  #main-window[titlepreface*="[S] "] #nav-bar[inFullscreen] {
+    top:25px !important;
+  }
+}
+
+toolbar .toolbarbutton-1 {
+  margin: 3px!important;
+  padding: 3px!important;
+}
+
+/* #main-window[titlepreface*="[S] "] #sidebar-box:before {
+  -moz-window-dragging: drag;
+  z-index:-1 !important;
+  position: absolute;
+  content: '';
+  width: 150px !important;
+  top: 0 !important;
+  left: 0 !important;
+  height: 80px !important;
+  background-color: rgb(217, 217, 31) !important;
+} */
+
+toolbarbutton:where([disabled="true"]){
+  display: none;
+}
